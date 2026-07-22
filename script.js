@@ -1,6 +1,5 @@
 // JAW 2026 — dark mode toggle and mobile menu.
-// Same behaviour as the CAISc 2026 site, moved into a shared file so every
-// page picks it up.
+// Shared by every page on the site.
 
 (function () {
     'use strict';

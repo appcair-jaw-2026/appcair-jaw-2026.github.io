@@ -8,23 +8,17 @@ BITS Pilani, Pilani Campus on **14-15 August 2026**.
 Plain static HTML, CSS and JavaScript. No build step, no framework, no dependencies.
 Push to `main` and GitHub Pages redeploys within a minute or two.
 
-The styling is the [CAISc 2026](https://caisc2026.github.io/) stylesheet, used so the two
-sites read as a family. The only palette change is `--accent`, swapped from CAISc teal to
-the APPCAIR brand indigo `#2E3192` sampled from the official APPCAIR lockup. A short
-"JAW 2026 additions" block at the bottom of `styles.css` holds the few components the
-CAISc base does not cover.
-
 ```
 index.html        the single-page site (all sections)
 hackathon.html    "details coming soon" stub
 posters.html      "details coming soon" stub
 register.html     "details coming soon" stub
-styles.css        CAISc base + JAW additions at the end
+styles.css        all styling, driven by CSS custom properties at the top
 script.js         theme toggle and mobile menu
 assets/
   favicon.svg
   logos/          BITS Pilani crest, APPCAIR mark and lockup
-  speakers/       drop speaker photos here (see below)
+  speakers/       speaker headshots, square JPEGs
 ```
 
 ## Editing content
@@ -38,17 +32,23 @@ commit.
 Copy an existing `<div class="team-member">` block in the Speakers section and edit the
 name, institution and day. Only add speakers who have confirmed.
 
-To use a photo instead of the initials placeholder, put a square image in
-`assets/speakers/` and swap the inner span:
+Put the headshot in `assets/speakers/` as a square image (500x500 works well) and point
+the `<img>` at it:
 
 ```html
-<!-- from -->
-<span class="team-member__image-placeholder">NH</span>
-<!-- to -->
-<img src="assets/speakers/hemachandra.jpg" alt="">
+<div class="team-member__image">
+    <img src="assets/speakers/surname.jpg" alt="Prof. Example Name">
+</div>
 ```
 
-The circular crop is applied automatically. Square images around 400x400 work best.
+The circular crop is applied automatically. If a photo is not available yet, use initials
+instead:
+
+```html
+<div class="team-member__image">
+    <span class="team-member__image-placeholder">XY</span>
+</div>
+```
 
 ### Filling in a stub page
 
@@ -65,8 +65,9 @@ Add a second `.supported-by` block (copy the one in the hero) with a
 ### Colours
 
 All colours are CSS custom properties in the `:root` block at the top of `styles.css`.
-Changing `--accent` (and the `[data-theme="dark"]` override below it) reskins the whole
-site.
+`--accent` is the APPCAIR brand indigo `#2E3192`, sampled from the official APPCAIR
+lockup. Changing it (and the `[data-theme="dark"]` override just below) reskins the
+whole site.
 
 ## Running locally
 
@@ -77,10 +78,6 @@ python3 -m http.server 8000
 
 ## Still to confirm
 
-- Full names for committee members currently listed by first name only
-  (Prashant, Siddharth, Pranjal, Devanshu, Piyush)
-- Whether "Prashant" in the research-talks and local-organisation portfolios is one
-  person or two different people
 - Talk titles and abstracts for the confirmed speakers
 - Hackathon theme, format, eligibility, prizes, registration link
 - Call for posters: deadline, format, submission route, cross-campus participation

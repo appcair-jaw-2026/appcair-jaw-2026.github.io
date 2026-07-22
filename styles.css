@@ -1,8 +1,8 @@
 /* =====================================================================
    JAW 2026 — Joint APPCAIR Workshop
-   Built on the CAISc 2026 stylesheet (caisc2026.github.io) so the two
-   sites read as a family. The only palette change is --accent, swapped
-   from CAISc teal to the APPCAIR brand indigo #2E3192.
+   Joint APPCAIR Workshop, BITS Pilani, 14-15 August 2026.
+   The accent colour is the APPCAIR brand indigo #2E3192, sampled from
+   the official APPCAIR lockup.
    ===================================================================== */
 
 /* ===== CSS Variables ===== */
@@ -1277,9 +1277,7 @@ main {
 }
 
 /* =====================================================================
-   JAW 2026 additions
-   Small components the CAISc base does not cover. Everything else above
-   is the CAISc stylesheet unchanged.
+   Additional components
    ===================================================================== */
 
 /* Status pill, e.g. "Coming soon" / "Confirmed" */
@@ -1444,4 +1442,30 @@ main {
 [data-theme="dark"] .supported-by__logos .logo--appcair,
 [data-theme="dark"] .footer__org-logo--appcair {
     filter: brightness(0) invert(1);
+}
+
+/* Committee chair, called out above the portfolio grid */
+.committee-chair {
+    padding: var(--space-4) var(--space-6);
+    margin: var(--space-6) 0 var(--space-4);
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+}
+
+.committee-chair h4 {
+    margin: 0 0 var(--space-1);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+}
+
+.committee-chair p {
+    margin: 0;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
 }

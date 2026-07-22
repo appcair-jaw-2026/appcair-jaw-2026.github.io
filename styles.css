@@ -1444,13 +1444,30 @@ main {
     filter: brightness(0) invert(1);
 }
 
-/* Committee chair, called out above the portfolio grid */
+/* Leadership, called out above the portfolio grid */
+.committee-leads {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin: var(--space-6) 0 var(--space-4);
+}
+
+@media (max-width: 640px) {
+    .committee-leads { grid-template-columns: 1fr; }
+}
+
 .committee-chair {
     padding: var(--space-4) var(--space-6);
-    margin: var(--space-6) 0 var(--space-4);
     background-color: var(--bg-secondary);
     border-left: 4px solid var(--accent);
     border-radius: 12px;
+}
+
+.committee-chair__campus {
+    display: block;
+    margin-top: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
 }
 
 .committee-chair h4 {

@@ -38,33 +38,33 @@
     --content-padding: 24px;
     --nav-height: 64px;
 
-    /* Light mode colors (default) */
+    /* Light mode colors (default) — poster palette, blue-tinted */
     --bg-primary: #FFFFFF;
-    --bg-secondary: #F5F5F5;
-    --bg-tertiary: #E5E5E5;
-    --text-primary: #1C1917;
-    --text-secondary: #57534E;
-    --text-tertiary: #A8A29E;
-    --accent: #2E3192;
-    --accent-hover: #4E52C7;
-    --accent-light: #E3E4F6;
-    --border: #E7E5E4;
-    --shadow: rgba(0, 0, 0, 0.08);
+    --bg-secondary: #eef4fb;
+    --bg-tertiary: #dbe6f5;
+    --text-primary: #14213f;
+    --text-secondary: #47567a;
+    --text-tertiary: #8794b3;
+    --accent: #1666c9;
+    --accent-hover: #2f6fe0;
+    --accent-light: #e3eefb;
+    --border: #dbe4f0;
+    --shadow: rgba(20, 33, 63, 0.08);
 }
 
-/* Dark mode */
+/* Dark mode — the poster's full navy treatment */
 [data-theme="dark"] {
-    --bg-primary: #000000;
-    --bg-secondary: #111111;
-    --bg-tertiary: #222222;
-    --text-primary: #f5f5f5;
-    --text-secondary: #a0a0a0;
-    --text-tertiary: #666666;
-    --accent: #8C90FF;
-    --accent-hover: #ADB0FF;
-    --accent-light: #1E2060;
-    --border: #2a2a2a;
-    --shadow: rgba(0, 0, 0, 0.3);
+    --bg-primary: #070c30;
+    --bg-secondary: #0c1240;
+    --bg-tertiary: #12205e;
+    --text-primary: #eaf3ff;
+    --text-secondary: #b9c9e6;
+    --text-tertiary: #8299c4;
+    --accent: #5adce5;
+    --accent-hover: #7ee8f0;
+    --accent-light: #12305a;
+    --border: rgba(120, 180, 255, 0.16);
+    --shadow: rgba(0, 0, 0, 0.45);
 }
 
 /* ===== Base Styles ===== */
@@ -1437,11 +1437,11 @@ main {
     max-width: 175px;
 }
 
-/* The lockup is APPCAIR blue; plain invert() would turn it yellow, so knock
-   it to white instead for dark mode. */
+/* In the poster theme the hero and footer logo groups always sit on a white
+   chip, so the navy APPCAIR lockup stays as-is in both light and dark mode. */
 [data-theme="dark"] .supported-by__logos .logo--appcair,
 [data-theme="dark"] .footer__org-logo--appcair {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 /* Leadership, called out above the portfolio grid */
@@ -1486,3 +1486,99 @@ main {
     font-weight: 600;
     color: var(--text-primary);
 }
+
+/* =====================================================================
+   Poster theme — dark-navy hero band + wave footer
+   The hero and footer carry the poster's identity (deep navy, cyan,
+   circuit ring, wave ribbon) in both light and dark mode. The reading
+   content between them follows the light/dark tokens above.
+   ===================================================================== */
+
+/* ---- Primary button: blue-to-cyan gradient ---- */
+.btn--primary {
+    background: linear-gradient(135deg, #1666c9 0%, #33c6e0 100%);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(22, 102, 201, .28);
+}
+.btn--primary:hover { color: #fff; box-shadow: 0 8px 22px rgba(22, 102, 201, .36); }
+
+/* ---- Dark-navy hero, straight off the poster ---- */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(90% 120% at 82% 20%, #123a8f 0%, transparent 55%),
+        radial-gradient(80% 100% at 12% 100%, #0e2170 0%, transparent 60%),
+        linear-gradient(160deg, #0a1550 0%, #060b33 70%);
+    color: #eaf3ff;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    top: -80px; right: -100px;
+    width: 640px; height: 640px;
+    background: url("assets/circuit.svg") no-repeat center / contain;
+    opacity: .5;
+    pointer-events: none;
+}
+.hero__content { position: relative; z-index: 1; }
+
+.hero .eyebrow { color: #5adce5; }
+.hero__title { color: #ffffff; text-shadow: 0 0 30px rgba(90, 220, 229, .28); }
+.hero__facts { color: #dbe9ff; }
+.hero__facts svg { color: #5adce5; }
+.hero__subtitle { color: rgba(219, 233, 255, .82); }
+
+.hero .btn--secondary {
+    background: rgba(255, 255, 255, .06);
+    border-color: rgba(147, 197, 253, .5);
+    color: #eaf3ff;
+}
+.hero .btn--secondary:hover { background: rgba(255, 255, 255, .14); color: #fff; }
+.hero .supported-by__label { color: rgba(219, 233, 255, .6); }
+
+/* logos sit on a white chip so both the crest and the navy lockup read */
+.hero .supported-by__logos {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 14px 26px;
+    display: inline-flex;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .28);
+}
+
+/* ---- Dark footer with a wave lip on top ---- */
+.footer {
+    position: relative;
+    background: linear-gradient(160deg, #0a1550 0%, #060b33 80%);
+    color: rgba(219, 233, 255, .72);
+    border-top: 0;
+    margin-top: 60px;
+}
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 70px;
+    transform: translateY(-100%);
+    background: url("assets/wave.svg") no-repeat bottom / cover;
+    pointer-events: none;
+}
+.footer__col h4,
+.footer__copyright { color: rgba(147, 197, 253, .7); }
+.footer__links a,
+.footer__emails a { color: rgba(219, 233, 255, .78); }
+.footer__links a:hover,
+.footer__emails a:hover { color: #fff; }
+.footer__columns,
+.footer__organized-by { border-color: rgba(147, 197, 253, .18); }
+.footer__organized-by span { color: rgba(147, 197, 253, .6); }
+.footer__organized-by .footer__org-logos {
+    background: #fff;
+    border-radius: 12px;
+    padding: 8px 18px;
+}
+
+/* ---- Dark-mode polish: cyan top rule on cards, like the poster panels ---- */
+[data-theme="dark"] .card { border-top: 3px solid var(--accent); }
+[data-theme="dark"] .highlight-box,
+[data-theme="dark"] .committee-chair { border-left-color: var(--accent); }

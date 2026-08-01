@@ -12,7 +12,6 @@ Push to `main` and GitHub Pages redeploys within a minute or two.
 index.html        the single-page site (all sections)
 hackathon.html    "details coming soon" stub
 posters.html      "details coming soon" stub
-register.html     "details coming soon" stub
 styles.css        all styling, driven by CSS custom properties at the top
 script.js         theme toggle and mobile menu
 assets/
@@ -52,7 +51,7 @@ instead:
 
 ### Filling in a stub page
 
-`hackathon.html`, `posters.html` and `register.html` share the same layout. Replace the
+`hackathon.html` and `posters.html` share the same layout. Replace the
 `<section class="content-section stub-page">` contents with the real details, then remove
 the `<span class="pill">Coming soon</span>` badge from the matching card in the "Take Part"
 section of `index.html`.
@@ -79,9 +78,9 @@ python3 -m http.server 8000
 ## Still to confirm
 
 - Talk titles and abstracts for the confirmed speakers
-- Hackathon theme, format, eligibility, prizes, registration link
+- Photo for Manoj Agarwal (Gika AI); currently an initials placeholder
+- Hackathon theme, format, eligibility, timeline, prize details
 - Call for posters: deadline, format, submission route, cross-campus participation
-- Registration form and closing date
 - Travel and accommodation detail for the Venue section (the airport and railhead
   distances currently on the page are approximate and should be checked)
 - Sponsor logos, once confirmed

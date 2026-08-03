@@ -1667,3 +1667,44 @@ main {
 }
 .frac .num { padding: 0 0.5rem 0.15rem; border-bottom: 2px solid currentColor; }
 .frac .den { padding: 0.15rem 0.5rem 0; }
+
+/* Hackathon timeline */
+.hack-timeline {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0 0;
+}
+.hack-timeline li {
+    position: relative;
+    padding: 0 0 var(--space-6) var(--space-8);
+    border-left: 2px solid var(--border);
+    margin: 0;
+}
+.hack-timeline li:last-child {
+    padding-bottom: 0;
+    border-left-color: transparent;
+}
+.hack-timeline li::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg-primary);
+}
+.hack-timeline .tl-date {
+    display: block;
+    font-weight: 700;
+    font-size: var(--text-sm);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: var(--space-1);
+}
+.hack-timeline .tl-body {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}

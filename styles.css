@@ -1582,3 +1582,88 @@ main {
 [data-theme="dark"] .card { border-top: 3px solid var(--accent); }
 [data-theme="dark"] .highlight-box,
 [data-theme="dark"] .committee-chair { border-left-color: var(--accent); }
+
+/* =====================================================================
+   Hackathon page
+   ===================================================================== */
+
+.hack-theme {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 3.2vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin: var(--space-3) 0 var(--space-2);
+}
+
+.hack-tagline {
+    font-style: italic;
+    font-size: var(--text-lg);
+    color: var(--accent);
+    margin: 0 0 var(--space-6);
+}
+
+/* "In collaboration with" strip */
+.collab {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-5);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    margin-bottom: var(--space-8);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.collab:hover { border-color: var(--accent); transform: translateY(-1px); color: inherit; }
+.collab__label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+}
+.collab img { height: 30px; width: auto; }
+.collab strong { font-weight: 700; color: var(--text-primary); }
+[data-theme="dark"] .collab img { filter: brightness(1.4); }
+
+/* Task input / output */
+.spec-list { list-style: none; padding: 0; margin: var(--space-4) 0 0; }
+.spec-list li {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--border);
+    line-height: 1.6;
+}
+.spec-list li:last-child { border-bottom: 1px solid var(--border); }
+.spec-list .spec-key {
+    flex: 0 0 84px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Scoring formula */
+.formula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: var(--space-6);
+    margin: var(--space-6) 0;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    font-size: var(--text-lg);
+    text-align: center;
+}
+.frac {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+}
+.frac .num { padding: 0 0.5rem 0.15rem; border-bottom: 2px solid currentColor; }
+.frac .den { padding: 0.15rem 0.5rem 0; }

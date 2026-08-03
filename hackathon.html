@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <title>Hackathon | JAW 2026</title>
-    <meta name="description" content="The JAW 2026 hackathon at BITS Pilani, Pilani Campus. Theme, format, eligibility and prizes to be announced.">
+    <title>Hackathon &middot; Trust &amp; Reliability in Generative AI | JAW 2026</title>
+    <meta name="description" content="JAW 2026 Hackathon, in collaboration with GikaGraph.ai: Quantifying Trust and Reliability in Generative AI output. 14-15 August 2026, BITS Pilani, Pilani Campus.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,27 +50,91 @@
 
     <main>
         <section class="content-section stub-page">
-            <p class="eyebrow">JAW 2026</p>
-            <h1>Hackathon</h1>
+            <p class="eyebrow">JAW 2026 &middot; Hackathon</p>
+            <h1>The Last Frontier of AI</h1>
+            <p class="hack-theme">Quantifying Trust &amp; Reliability in Generative AI Output</p>
+            <p class="hack-tagline">&ldquo;Let's conquer the last frontier of AI, let's build for AI reliability.&rdquo;</p>
+
+            <a class="collab" href="https://www.gikagraph.ai/" target="_blank" rel="noopener">
+                <span class="collab__label">In collaboration with</span>
+                <img src="assets/logos/gikagraph-mark.png" alt="GikaGraph.ai">
+                <strong>GikaGraph.ai</strong>
+            </a>
+
+            <h2>The Challenge</h2>
             <p>
-                A hands-on build sprint running alongside the workshop at BITS Pilani, Pilani Campus, with
-                <strong>attractive prizes to be won</strong>. The theme, team size, eligibility, timeline and
-                judging criteria are being finalised.
+                The world is mesmerised by the creativity of AI. However, <strong>creativity and reliability
+                are two opposing objectives</strong>.
+            </p>
+            <p>
+                Existing AI models fail to capture multi-hop reasoning, numerical dependencies, and strict
+                logical constraints over complex data. How do we prove and trust AI outputs that require long
+                contextual memory, stretching far beyond the model context window, numerical consistency, and
+                multi-hop reasoning over heterogeneous data? Your goal is to develop a rigorous framework that
+                ensures AI outputs are reliable, factual, and trustworthy for complex real-world workloads.
+            </p>
+
+            <h2>The Objective</h2>
+            <p>
+                As Generative AI transitions into complex workflows, the industry faces a critical gap:
+                <strong>how do we trust AI-generated responses?</strong>
+            </p>
+            <p>
+                The AI community still lacks a rigorous framework to generate reliable model responses and
+                validate their quality. Models continuously struggle with numerical alignment and long-horizon
+                reasoning over complex datasets.
+            </p>
+
+            <h2>Hackathon Task</h2>
+            <ul class="spec-list">
+                <li>
+                    <span class="spec-key">Input</span>
+                    <span>A raw, complex multi-modal dataset (combining structured and unstructured data) and
+                          a real-world example set of questions.</span>
+                </li>
+                <li>
+                    <span class="spec-key">Output</span>
+                    <span>A framework that processes this multi-modal dataset to ensure AI outputs are accurate
+                          for workloads requiring long contextual memory, numerical consistency, and deep
+                          reasoning capabilities, materially improving model reliability and eliminating
+                          traditional hallucination vectors.</span>
+                </li>
+            </ul>
+
+            <h2>Evaluation Metric</h2>
+            <p>
+                For each question in the validation set, there will be one exact <strong>factual answer</strong>.
+                Your score depends on how close your generated response is to the factual target.
             </p>
 
             <div class="highlight-box">
-                <h3>Details coming soon</h3>
+                <h3>Important note</h3>
                 <p>
-                    Hackathon information will be published on this page. If you have a question in the
-                    meantime, write to
-                    <a href="mailto:dhruv.kumar@pilani.bits-pilani.ac.in?subject=JAW%202026%20hackathon">dhruv.kumar@pilani.bits-pilani.ac.in</a>.
+                    Answers will <strong>not</strong> be directly present in the dataset. There will be no
+                    simple text chunk containing a direct answer, your system must reason, aggregate, and
+                    compute across the data.
                 </p>
             </div>
 
-            <h2>What we know so far</h2>
+            <div class="formula" aria-label="Score equals max of 0 and 1 minus the absolute difference between your answer and the correct answer divided by the correct answer">
+                <span>Score = max&thinsp;( 0,&nbsp; 1 &minus;</span>
+                <span class="frac">
+                    <span class="num">| Your Answer &minus; Correct Answer |</span>
+                    <span class="den">Correct Answer</span>
+                </span>
+                <span>)</span>
+            </div>
+
+            <ul>
+                <li><strong>100% score</strong> is awarded for an exact match to the ground truth.</li>
+                <li><strong>Scoring basis:</strong> each question in the validation set is evaluated
+                    numerically with respect to the correct answer.</li>
+            </ul>
+
+            <h2>Key details</h2>
             <div class="cards-grid">
                 <div class="card">
-                    <h3>Workshop Dates</h3>
+                    <h3>Dates</h3>
                     <p>14-15 August 2026</p>
                 </div>
                 <div class="card">
@@ -81,6 +145,27 @@
                     <h3>Prizes</h3>
                     <p>Attractive prizes to be won</p>
                 </div>
+                <div class="card">
+                    <h3>Eligibility</h3>
+                    <p>To be announced</p>
+                </div>
+                <div class="card">
+                    <h3>Team Size</h3>
+                    <p>To be announced</p>
+                </div>
+                <div class="card">
+                    <h3>How to Participate</h3>
+                    <p>To be announced</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Stay in the loop</h3>
+                <p>
+                    Details on how to participate will be announced here. If you have a question in the
+                    meantime, write to
+                    <a href="mailto:dhruv.kumar@pilani.bits-pilani.ac.in?subject=JAW%202026%20hackathon">dhruv.kumar@pilani.bits-pilani.ac.in</a>.
+                </p>
             </div>
 
             <p><a href="index.html" class="btn btn--secondary">&larr; Back to JAW 2026</a></p>

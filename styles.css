@@ -1708,3 +1708,45 @@ main {
     color: var(--text-secondary);
     line-height: 1.6;
 }
+
+/* =====================================================================
+   Schedule (homepage)
+   ===================================================================== */
+.schedule {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-4);
+}
+@media (max-width: 760px) { .schedule { grid-template-columns: 1fr; } }
+
+.sched-day {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 12px;
+    padding: var(--space-5) var(--space-6) var(--space-4);
+}
+.sched-day__title { margin: 0 0 var(--space-2); font-size: var(--text-lg); }
+
+.sched-list { list-style: none; margin: 0; padding: 0; }
+.sched-row {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    margin: 0;
+    border-top: 1px solid var(--border);
+}
+.sched-row:first-child { border-top: 0; }
+.sched-time {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.45;
+}
+.sched-sess { line-height: 1.45; }
+.sched-sess strong { display: block; font-weight: 600; color: var(--text-primary); }
+.sched-meta { font-size: var(--text-sm); color: var(--text-secondary); }
+.sched-row--break .sched-time { color: var(--text-tertiary); }
+.sched-row--break .sched-sess strong { font-weight: 500; font-style: italic; color: var(--text-secondary); }

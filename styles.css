@@ -1771,10 +1771,20 @@ main {
     text-underline-offset: 2px;
 }
 
-/* Note under the hackathon CTA buttons */
-.hack-cta__note {
-    flex-basis: 100%;
-    margin: 2px 0 0;
-    font-size: var(--text-sm);
-    color: var(--text-secondary);
+/* Register button + highlighted BITS-email hint stacked beneath it */
+.hack-cta { align-items: flex-start; }
+.hack-cta__reg {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.hack-cta__hint {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--accent);
+    background: var(--accent-light);
+    border-radius: 7px;
+    padding: 6px 10px;
 }

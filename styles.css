@@ -1788,3 +1788,12 @@ main {
     border-radius: 7px;
     padding: 6px 10px;
 }
+
+/* Talk title under a speaker's affiliation */
+.team-member__talk {
+    margin: var(--space-2) 0 0;
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--accent);
+    line-height: 1.4;
+}

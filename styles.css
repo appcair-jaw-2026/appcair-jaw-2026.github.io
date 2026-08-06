@@ -1770,3 +1770,11 @@ main {
     text-decoration: underline;
     text-underline-offset: 2px;
 }
+
+/* Note under the hackathon CTA buttons */
+.hack-cta__note {
+    flex-basis: 100%;
+    margin: 2px 0 0;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}

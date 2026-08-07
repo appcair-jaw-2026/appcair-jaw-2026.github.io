@@ -1797,3 +1797,34 @@ main {
     color: var(--accent);
     line-height: 1.4;
 }
+
+/* ===== Sponsors ===== */
+.sponsors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+    margin-top: var(--space-2);
+}
+.sponsor {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-6);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.sponsor:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--shadow);
+    color: var(--text-primary);
+}
+.sponsor img { height: 40px; width: auto; }
+.sponsor__name { line-height: 1.25; }
+.sponsor__name strong { display: block; font-weight: 700; font-size: var(--text-lg); }
+.sponsor__name span { font-size: var(--text-sm); color: var(--text-secondary); }
+[data-theme="dark"] .sponsor img { filter: brightness(1.4); }

@@ -1845,6 +1845,6 @@ main {
     transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 .hero__sponsor:hover { border-color: #5adce5; background: rgba(255, 255, 255, 0.1); color: #fff; }
-.hero__sponsor .lbl { color: rgba(219, 233, 255, 0.78); }
+.hero__sponsor .lbl { color: #ffffff; }
 .hero__sponsor img { height: 20px; width: auto; filter: brightness(1.6); }
 .hero__sponsor strong { color: #fff; font-weight: 700; }

@@ -1828,3 +1828,23 @@ main {
 .sponsor__name strong { display: block; font-weight: 700; font-size: var(--text-lg); }
 .sponsor__name span { font-size: var(--text-sm); color: var(--text-secondary); }
 [data-theme="dark"] .sponsor img { filter: brightness(1.4); }
+
+/* Hackathon sponsor badge in the hero */
+.hero__sponsor {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: var(--space-6);
+    padding: 8px 18px;
+    border: 1px solid rgba(147, 197, 253, 0.5);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    color: #eaf3ff;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.hero__sponsor:hover { border-color: #5adce5; background: rgba(255, 255, 255, 0.1); color: #fff; }
+.hero__sponsor .lbl { color: rgba(219, 233, 255, 0.78); }
+.hero__sponsor img { height: 20px; width: auto; filter: brightness(1.6); }
+.hero__sponsor strong { color: #fff; font-weight: 700; }

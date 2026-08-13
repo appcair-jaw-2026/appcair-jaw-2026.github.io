@@ -71,6 +71,7 @@
                     <span class="hack-cta__hint">Use your BITS email ID</span>
                 </span>
                 <a class="btn btn--secondary" href="https://jaw.hackathon.gikagraph.ai/" target="_blank" rel="noopener">Submit your Solution</a>
+                <a class="btn btn--attn" href="#final-assessment">Final Assessment</a>
             </div>
 
             <div class="highlight-box">
@@ -79,79 +80,6 @@
                 <p>The validation set is now available on GitHub. Final submission closes at 12 PM on 13th
                    August, so grab it and refine your solution.</p>
                 <p style="margin-bottom:0;"><a class="btn btn--primary" href="https://github.com/satvikGIKA/BITS-Hackathon-Dataset/blob/main/questions.json" target="_blank" rel="noopener">Open the validation dataset</a></p>
-            </div>
-
-            <h2>Final Assessment</h2>
-            <p>
-                The final assessment is the tie-breaker round of the hackathon. Your submitted repository will
-                be run by us internally on a new set of questions, and teams will be ranked on that result.
-                Please read the following carefully.
-            </p>
-
-            <div class="highlight-box">
-                <p style="margin:0 0 8px;"><span class="pill pill--accent">Final round</span></p>
-                <h3>Deadlines, 13th August</h3>
-                <ul style="margin-bottom: var(--space-3);">
-                    <li>Solution (CSV) submissions close at <strong>12:00 PM</strong>.</li>
-                    <li>Repository submissions close at <strong>12:30 PM</strong>.</li>
-                </ul>
-                <p style="margin-bottom:0;">No requests for an extension of either deadline will be entertained.</p>
-            </div>
-
-            <h3>How to submit your repository</h3>
-            <ol>
-                <li>Use the same GitHub repository from which you made your commits and CSV submissions during
-                    the hackathon. Do not create a new one.</li>
-                <li>Add <strong>satvik@gikagraph.ai</strong> as a collaborator on that repository. Your
-                    repository stays private, the collaborator invite is how we access it.</li>
-                <li>Make sure your final code is pushed and that the repository follows the required format.</li>
-                <li>Submit the repository URL on the platform, under <strong>Repository</strong>. You can change
-                    the URL as many times as you need until the deadline; the last one saved is the one we
-                    judge.</li>
-            </ol>
-            <p>
-                Teams that do not submit their repository in the required format by the deadline will not be
-                considered for the final evaluation.
-            </p>
-
-            <h3>What your repository must contain</h3>
-            <ul>
-                <li>A <code>run.sh</code> at the root that runs your whole pipeline end to end:
-                    <div class="codeblock"><code>./run.sh --docs &lt;dir&gt; --questions &lt;questions.json&gt; --out submission.csv</code></div>
-                </li>
-                <li>Everything inside it: ingestion of the document tree (PDF and XLSX, nested), retrieval,
-                    reasoning and CSV output. It must work from a clean checkout.</li>
-                <li>Dependencies in <code>requirements.txt</code>, and model weights fetched in
-                    <code>setup.sh</code>, not lazily during the run. There is no internet at run time.</li>
-                <li>Generation must use only the LLM endpoint we provide (<code>LLM_BASE_URL</code>). No
-                    external APIs. Embedding and reranking models you ship yourself are fine.</li>
-                <li>Output: one CSV, <code>question_id,answer</code>, one row per question, plain numbers with
-                    no units or separators.</li>
-            </ul>
-            <p>
-                This is a summary only. The full specification, including scoring and tolerances, the ports
-                your services may bind to, the endpoint's quirks, and the rules we check the code against, is
-                on the platform.
-            </p>
-
-            <div class="highlight-box">
-                <h3>Read the full instructions on the platform</h3>
-                <p>
-                    <a href="https://jaw.hackathon.gikagraph.ai" target="_blank" rel="noopener">jaw.hackathon.gikagraph.ai</a>.
-                    Sign in and read these sections:
-                </p>
-                <ul>
-                    <li><strong>Final assessment</strong>, the landing page, with both deadlines and the
-                        summary of what is required.</li>
-                    <li><strong>Extended instructions</strong>, the complete specification your repository will
-                        be run against. Read this one before you submit.</li>
-                    <li><strong>Repository</strong>, the submission form, with the step-by-step checklist and
-                        the required repository format.</li>
-                </ul>
-                <p style="margin-bottom:0;">
-                    If anything is unclear or something on the platform is not working, use the Help section to
-                    report it, it reaches us directly.
-                </p>
             </div>
 
             <h2>The Challenge</h2>
@@ -271,6 +199,79 @@
                 <li><strong>Team size:</strong> Up to 4 students per team.</li>
                 <li><strong>How to participate:</strong> Get the <a href="https://github.com/satvikGIKA/BITS-Hackathon-Dataset" target="_blank" rel="noopener">problem statement and dataset on GitHub</a>, then <a href="https://jaw.hackathon.gikagraph.ai/" target="_blank" rel="noopener">register and submit your solution</a>.</li>
             </ul>
+
+            <h2 id="final-assessment">Final Assessment</h2>
+            <p>
+                The final assessment is the tie-breaker round of the hackathon. Your submitted repository will
+                be run by us internally on a new set of questions, and teams will be ranked on that result.
+                Please read the following carefully.
+            </p>
+
+            <div class="highlight-box">
+                <p style="margin:0 0 8px;"><span class="pill pill--accent">Final round</span></p>
+                <h3>Deadlines, 13th August</h3>
+                <ul style="margin-bottom: var(--space-3);">
+                    <li>Solution (CSV) submissions close at <strong>12:00 PM</strong>.</li>
+                    <li>Repository submissions close at <strong>12:30 PM</strong>.</li>
+                </ul>
+                <p style="margin-bottom:0;">No requests for an extension of either deadline will be entertained.</p>
+            </div>
+
+            <h3>How to submit your repository</h3>
+            <ol>
+                <li>Use the same GitHub repository from which you made your commits and CSV submissions during
+                    the hackathon. Do not create a new one.</li>
+                <li>Add <strong>satvik@gikagraph.ai</strong> as a collaborator on that repository. Your
+                    repository stays private, the collaborator invite is how we access it.</li>
+                <li>Make sure your final code is pushed and that the repository follows the required format.</li>
+                <li>Submit the repository URL on the platform, under <strong>Repository</strong>. You can change
+                    the URL as many times as you need until the deadline; the last one saved is the one we
+                    judge.</li>
+            </ol>
+            <p>
+                Teams that do not submit their repository in the required format by the deadline will not be
+                considered for the final evaluation.
+            </p>
+
+            <h3>What your repository must contain</h3>
+            <ul>
+                <li>A <code>run.sh</code> at the root that runs your whole pipeline end to end:
+                    <div class="codeblock"><code>./run.sh --docs &lt;dir&gt; --questions &lt;questions.json&gt; --out submission.csv</code></div>
+                </li>
+                <li>Everything inside it: ingestion of the document tree (PDF and XLSX, nested), retrieval,
+                    reasoning and CSV output. It must work from a clean checkout.</li>
+                <li>Dependencies in <code>requirements.txt</code>, and model weights fetched in
+                    <code>setup.sh</code>, not lazily during the run. There is no internet at run time.</li>
+                <li>Generation must use only the LLM endpoint we provide (<code>LLM_BASE_URL</code>). No
+                    external APIs. Embedding and reranking models you ship yourself are fine.</li>
+                <li>Output: one CSV, <code>question_id,answer</code>, one row per question, plain numbers with
+                    no units or separators.</li>
+            </ul>
+            <p>
+                This is a summary only. The full specification, including scoring and tolerances, the ports
+                your services may bind to, the endpoint's quirks, and the rules we check the code against, is
+                on the platform.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Read the full instructions on the platform</h3>
+                <p>
+                    <a href="https://jaw.hackathon.gikagraph.ai" target="_blank" rel="noopener">jaw.hackathon.gikagraph.ai</a>.
+                    Sign in and read these sections:
+                </p>
+                <ul>
+                    <li><strong>Final assessment</strong>, the landing page, with both deadlines and the
+                        summary of what is required.</li>
+                    <li><strong>Extended instructions</strong>, the complete specification your repository will
+                        be run against. Read this one before you submit.</li>
+                    <li><strong>Repository</strong>, the submission form, with the step-by-step checklist and
+                        the required repository format.</li>
+                </ul>
+                <p style="margin-bottom:0;">
+                    If anything is unclear or something on the platform is not working, use the Help section to
+                    report it, it reaches us directly.
+                </p>
+            </div>
 
             <div class="highlight-box">
                 <h3>Questions?</h3>

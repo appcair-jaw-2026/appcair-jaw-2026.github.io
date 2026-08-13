@@ -1848,3 +1848,28 @@ main {
 .hero__sponsor .lbl { color: #ffffff; }
 .hero__sponsor img { height: 20px; width: auto; filter: brightness(1.6); }
 .hero__sponsor strong { color: #fff; font-weight: 700; }
+
+/* Inline code and code blocks (hackathon final assessment) */
+code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.88em;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+    color: var(--text-primary);
+    word-break: break-word;
+}
+.codeblock {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 12px 14px;
+    overflow-x: auto;
+    margin: var(--space-3) 0 var(--space-4);
+    color: var(--text-primary);
+}
+.codeblock code { background: none; border: 0; padding: 0; white-space: pre; }

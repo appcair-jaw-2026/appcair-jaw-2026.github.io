@@ -1905,3 +1905,84 @@ code {
 @media (prefers-reduced-motion: reduce) {
     .btn--attn { animation: none; }
 }
+
+/* ===== Talk abstracts: button + modal ===== */
+.abstract-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 3px 12px;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.abstract-btn:hover { background: var(--accent); color: #fff; }
+
+.abs-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+}
+.abs-modal.open { display: flex; }
+.abs-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 21, 80, 0.55);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+.abs-modal__panel {
+    position: relative;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: var(--space-8);
+    box-shadow: 0 30px 80px rgba(20, 33, 63, 0.4);
+    animation: abs-pop 0.2s ease;
+}
+@keyframes abs-pop { from { transform: translateY(10px); opacity: 0; } to { transform: none; opacity: 1; } }
+.abs-modal__close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-secondary);
+    font-size: 22px;
+    line-height: 1;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.abs-modal__close:hover { color: var(--text-primary); border-color: var(--text-tertiary); }
+.abs-modal__eyebrow {
+    margin: 0 0 var(--space-2);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+.abs-modal__title { margin: 0 34px 4px 0; font-size: var(--text-xl); }
+.abs-modal__meta { margin: 0 0 var(--space-4); color: var(--text-secondary); font-weight: 600; font-size: var(--text-sm); }
+.abs-modal__body p { margin: 0 0 var(--space-4); color: var(--text-secondary); line-height: 1.7; }
+.abs-modal__body p:last-child { margin-bottom: 0; }
+
+@media (prefers-reduced-motion: reduce) { .abs-modal__panel { animation: none; } }

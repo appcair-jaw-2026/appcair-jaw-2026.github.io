@@ -51,9 +51,12 @@
     var elTitle = modal.querySelector('.abs-modal__title');
     var elMeta  = modal.querySelector('.abs-modal__meta');
     var elBody  = modal.querySelector('.abs-modal__body');
+    var elEyebrow = modal.querySelector('.abs-modal__eyebrow');
     var lastFocus = null;
 
-    function openModal(sess) {
+    function openModal(btn) {
+        var sess = btn.closest ? btn.closest('.sched-sess') : btn.parentNode;
+        if (elEyebrow) elEyebrow.textContent = btn.getAttribute('data-label') || 'Abstract';
         var strong = sess.querySelector('strong');
         var meta   = sess.querySelector('.sched-meta');
         var data   = sess.querySelector('.abs-data');
@@ -77,8 +80,7 @@
     Array.prototype.forEach.call(document.querySelectorAll('.abstract-btn'), function (btn) {
         btn.addEventListener('click', function () {
             lastFocus = btn;
-            var sess = btn.closest ? btn.closest('.sched-sess') : btn.parentNode;
-            openModal(sess);
+            openModal(btn);
         });
     });
 

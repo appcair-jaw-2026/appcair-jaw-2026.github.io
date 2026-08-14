@@ -1986,3 +1986,85 @@ code {
 .abs-modal__body p:last-child { margin-bottom: 0; }
 
 @media (prefers-reduced-motion: reduce) { .abs-modal__panel { animation: none; } }
+
+/* ===== Hackathon results: podium + standings ===== */
+.podium {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin: var(--space-4) 0 var(--space-8);
+    align-items: stretch;
+}
+@media (max-width: 760px) { .podium { grid-template-columns: 1fr; } }
+.podium-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--text-tertiary);
+    border-radius: 12px;
+    padding: var(--space-6);
+    text-align: center;
+}
+.podium-card--1 { border-top-color: #d4a017; }
+.podium-card--2 { border-top-color: #9aa3b2; }
+.podium-card--3 { border-top-color: #b8502a; }
+.podium-rank {
+    display: inline-grid;
+    place-items: center;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--text-tertiary);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+.podium-card--1 .podium-rank { background: #d4a017; }
+.podium-card--2 .podium-rank { background: #9aa3b2; }
+.podium-card--3 .podium-rank { background: #b8502a; }
+.podium-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-tertiary);
+}
+.podium-team { margin: 6px 0 2px; font-size: var(--text-lg); }
+.podium-score { margin: 0 0 var(--space-4); font-size: 2.1rem; font-weight: 800; color: var(--accent); line-height: 1; }
+.podium-members { list-style: none; padding: 0; margin: 0; font-size: var(--text-sm); color: var(--text-secondary); }
+.podium-members li { margin: 3px 0; }
+
+.lead-tag {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    border-radius: 4px;
+    padding: 0 5px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.table-wrap { overflow-x: auto; margin-top: var(--space-4); }
+.standings { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.standings th, .standings td {
+    text-align: left;
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+.standings thead th {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    border-bottom: 1px solid var(--border);
+}
+.standings td.st-rank, .standings th.st-rank { width: 44px; color: var(--text-tertiary); }
+.standings .st-team { font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+.standings .st-members { color: var(--text-secondary); }
+.standings .st-members span { white-space: nowrap; }
+.standings th.st-score, .standings td.st-score { text-align: right; font-weight: 700; white-space: nowrap; }
+.standings tr.st-failed td { color: var(--text-tertiary); }
